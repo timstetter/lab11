@@ -31,10 +31,7 @@ public class MovieApp {
 			for (Movie movie : movies) {
 				if (userCategory.equalsIgnoreCase(movie.getCategory())) {
 					System.out.println(movie.getTitle());					
-				} else {
-					System.out.println("Please choose a listed category");
-					break;
-				}
+				} 
 				
 			}
 			
