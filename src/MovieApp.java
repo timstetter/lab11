@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
@@ -24,7 +25,10 @@ public class MovieApp {
 		for (String x : categories) {
 			categoriesList.add(x);
 		}
-
+		
+		//sort list alpha
+		Collections.sort(categoriesList);
+		
 		System.out.println("Welcome to the Movie List application!\n");
 		System.out.println("There are " + movies.size() + " movies in the list\n");
 
@@ -38,35 +42,35 @@ public class MovieApp {
 			switch (menuChoice) {
 			case 1:
 				for (Movie movie : movies) {
-					if (movie.getCategory().equals("drama")) {
+					if (movie.getCategory().equals("animated")) {
 						System.out.println(movie.getTitle());
 					}
 				}
 				break;
 			case 2:
 				for (Movie movie : movies) {
-					if (movie.getCategory().equals("horror")) {
+					if (movie.getCategory().equals("comedy")) {
 						System.out.println(movie.getTitle());
 					}
 				}
 				break;
 			case 3:
 				for (Movie movie : movies) {
-					if (movie.getCategory().equals("musical")) {
+					if (movie.getCategory().equals("drama")) {
 						System.out.println(movie.getTitle());
 					}
 				}
 				break;
 			case 4:
 				for (Movie movie : movies) {
-					if (movie.getCategory().equals("comedy")) {
+					if (movie.getCategory().equals("horror")) {
 						System.out.println(movie.getTitle());
 					}
 				}
 				break;
 			case 5:
 				for (Movie movie : movies) {
-					if (movie.getCategory().equals("animated")) {
+					if (movie.getCategory().equals("musical")) {
 						System.out.println(movie.getTitle());
 					}
 				}
