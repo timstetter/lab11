@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -36,7 +37,12 @@ public class MovieApp {
 		
 		printMenu();
 		
-		menuChoice = scnr.nextInt();
+		try {
+			menuChoice = scnr.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Please type the number for the menu option\n");
+				scnr.nextLine();
+			}
 		
 		while (menuChoice != categoriesList.size() + 1) {
 			switch (menuChoice) {
@@ -87,8 +93,12 @@ public class MovieApp {
 			}
 
 			printMenu();
+			try {
 			menuChoice = scnr.nextInt();
-
+			} catch (InputMismatchException e) {
+				System.out.println("Please type the number for the menu option\n");
+				scnr.nextLine();
+			}
 		}
 		scnr.close();
 
