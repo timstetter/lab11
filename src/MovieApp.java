@@ -15,35 +15,41 @@ public class MovieApp {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 
+		// Get 100 movies from the MovieIO class
+
 		for (int i = 1; i <= 100; i++) {
 			movies.add(MovieIO.getMovie(i));
 		}
 
+		// add the categories to a set
+
 		for (Movie movie : movies) {
 			categories.add(movie.getCategory());
 		}
+
+		// make the set into a list for printing to menu
 		categoriesList = new ArrayList<>(categories.size());
 		for (String x : categories) {
 			categoriesList.add(x);
 		}
-		
-		//sort list alpha
+
+		// sort list alpha
 		Collections.sort(categoriesList);
-		
+
 		System.out.println("Welcome to the Movie List application!\n");
 		System.out.println("There are " + movies.size() + " movies in the list\n");
 
 		int menuChoice = -1;
-		
+
 		printMenu();
-		
+
 		try {
 			menuChoice = scnr.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Please type the number for the menu option\n");
-				scnr.nextLine();
-			}
-		
+		} catch (InputMismatchException e) {
+			System.out.println("Please type the number for the menu option\n");
+			scnr.nextLine();
+		}
+
 		while (menuChoice != categoriesList.size() + 1) {
 			switch (menuChoice) {
 			case 1:
@@ -94,7 +100,7 @@ public class MovieApp {
 
 			printMenu();
 			try {
-			menuChoice = scnr.nextInt();
+				menuChoice = scnr.nextInt();
 			} catch (InputMismatchException e) {
 				System.out.println("Please type the number for the menu option\n");
 				scnr.nextLine();
