@@ -53,46 +53,22 @@ public class MovieApp {
 		while (menuChoice != categoriesList.size() + 1) {
 			switch (menuChoice) {
 			case 1:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("animated")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(0);
 				break;
 			case 2:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("comedy")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(1);
 				break;
 			case 3:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("drama")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(2);
 				break;
 			case 4:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("horror")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(3);
 				break;
 			case 5:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("musical")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(4);
 				break;
 			case 6:
-				for (Movie movie : movies) {
-					if (movie.getCategory().equals("scifi")) {
-						System.out.println(movie.getTitle());
-					}
-				}
+				printList(5);
 				break;
 			default:
 				System.out.println("***** Please choose a correct menu option *****\n");
@@ -118,6 +94,14 @@ public class MovieApp {
 			System.out.print((i + 1) + ") " + categoriesList.get(i) + "\n");
 		}
 		System.out.println(categoriesList.size() + 1 + ") Exit");
+	}
+
+	public static void printList(int listNum) {
+		for (Movie movie : movies) {
+			if (movie.getCategory().equals(categoriesList.get(listNum))) {
+				System.out.println(movie.getTitle());
+			}
+		}
 	}
 
 }
